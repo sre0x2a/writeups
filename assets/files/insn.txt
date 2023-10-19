@@ -15,7 +15,7 @@
 0x028:	ab 00 be	CALL	0xbe
 0x02b:	98 01 02	CMPQ	r1,r2
 0x02e:	81 01 20	JNZ	0x120
-0x031:	52		MOVZX	r0,byte ptr[serial]
+0x031:	52		MOVZX	r0,byte ptr[r5]
 0x032:	7f 00 2d	CMPQ	r0,#45
 0x035:	81 01 20	JNZ	0x120
 0x038:	ab 00 4b	CALL	0x4b
@@ -38,7 +38,7 @@
 0x066:	11 00 51	JMP	0x51
 0x069:	ba		RET
 0x06a:	99 02		MOVQ	r2,0xb7e151628aed2a6a
-0x074:	69		MOVZX	r0,byte ptr[username]
+0x074:	69		MOVZX	r0,byte ptr[r4]
 0x075:	54 00		TESTQ	r0,r0
 0x077:	55 00 99	JZ	0x99
 0x07a:	8d 02		PUSHQ	r2
@@ -54,7 +54,7 @@
 0x093:	9c 02 00	XORB	r2,r0
 0x096:	11 00 74	JMP	0x74
 0x099:	ba		RET
-0x09a:	52		MOVZX	r0,byte ptr[serial]
+0x09a:	52		MOVZX	r0,byte ptr[r5]
 0x09b:	7f 00 30	CMPQ	r0,#48
 0x09e:	95 01 20	JL	0x120
 0x0a1:	7f 00 47	CMPQ	r0,#71
@@ -89,10 +89,10 @@
 0x0ee:	ba		RET
 0x0ef:	8d 04		PUSHQ	r4
 0x0f1:	56 01 00	MOVZX	r1,#0
-0x0f4:	69		MOVZX	r0,byte ptr[username]
+0x0f4:	69		MOVZX	r0,byte ptr[r4]
 0x0f5:	54 00		TESTQ	r0,r0
 0x0f7:	55 01 03	JZ	0x103
-0x0fa:	ab 00 ce    CALL 0xce
+0x0fa:	ab 00 ce	CALL	0xce
 0x0fd:	93 01 02	ADDQ	r1,r2
 0x100:	11 00 f4	JMP	0xf4
 0x103:	94 01		ANDQ	r1,#255
