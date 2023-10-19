@@ -92,7 +92,7 @@
 0x0f4:	69		MOVZX	r0,byte ptr[username]
 0x0f5:	54 00		TESTQ	r0,r0
 0x0f7:	55 01 03	JZ	0x103
-0x0fa:	ab 00 ce  CALL 0xce
+0x0fa:	ab 00 ce    CALL 0xce
 0x0fd:	93 01 02	ADDQ	r1,r2
 0x100:	11 00 f4	JMP	0xf4
 0x103:	94 01		ANDQ	r1,#255
