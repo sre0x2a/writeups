@@ -119,7 +119,7 @@ The final check that needs to pass is the XOR'ing of seventh character to the fo
 0x75:	JZ 0x78
 ```
 
-Creating equations for the three operation's results being compared above gives:
+Creating equations for the three operations described above results in the following:
 
 ```
 // let p represent the password as an array of char
@@ -128,13 +128,13 @@ Creating equations for the three operation's results being compared above gives:
 (3) p[6] ^ p[3] ^ p[4] ^ p[5] = 3
 ```
 
-Substituting (2) into (3) and using the value of p[3] equaling 71 (0x47) results in the equation
+Substituting (2) into (3) and using the value of p[3] equaling 71 (0x47), results in the equation:
 
 ```
 (4)  11 ^ 71 ^ 3 = p[4]
 ```
 
-That results in the fifth character equal to 79 (0x4f). Substituting that value into equation (1) results in the following equation
+That results in the fifth character equal to 79 (0x4f). Substituting that value into equation (1) results in the following equation:
 
 ```
 (5) 71 ^ 79 ^ 76 = p[6]
