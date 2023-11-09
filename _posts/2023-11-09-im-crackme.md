@@ -104,7 +104,7 @@ The next check XOR's the seventh character to the sixth character. The result ne
 0x58:	JNZ 0x77
 ```
 
-The final check that needs to pass is the XOR'ing of seventh character to the fourth. The result being XOR'd to the fifth character with that result being XOR'd to the sixth character. The final result needs to be equal to 3.
+The final check that needs to pass is the XOR'ing of seventh character to the fourth. The result of the XOR being XOR'd to the fifth character with that result being XOR'd to the sixth character. The final result needs to be equal to 3.
 
 ```
 0x5a:	MOV r1,password[3]
