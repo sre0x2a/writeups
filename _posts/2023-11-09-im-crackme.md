@@ -56,7 +56,7 @@ The first character of the password is XOR'd by 77 (0x4d) and compared to 4. If 
 0xf:	JNZ 0x77
 ```
 
-Because of the properties of the XOR operation being commutative, associative, self-inverse, and 0 being the identity element, one can solve a binary XOR operation with one operand known and the other as a variable (unknown) equal to a known by XOR'ing both sides of the equality operator by the known. Applying that to the "equation" of 77 XOR 4 is 73 (0x49). The first character needs to equal 73 (0x49) or the letter 'I'.
+Because of the properties of the XOR operation being commutative, associative, self-inverse, and 0 being the identity element, one can solve a binary XOR operation with one operand known and the other as a variable (unknown) equal to a known by XOR'ing both sides of the equality operator by the known. Applying that idea generates the "equation" of 77 XOR 4, which results in the value 73 (0x49). The first character needs to equal 73 (0x49) or the letter 'I'.
 
 The second character is XOR'd by the result of the previous XOR (4). The result of that operation needs to be equal to 73 (0x49).
 
