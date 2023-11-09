@@ -45,7 +45,7 @@ I have a few notes of the instructions listed in the table above. The `X` and `Y
 
 I wrote a simple disassembler [program](https://sre0x2a.github.io/writeups/assets/files/imcrackme/disasm.c) to show the resulting [code](https://sre0x2a.github.io/writeups/assets/files/imcrackme/listing.txt) to check for a correct password.
 
-The first character of the password is XOR'd by 77 (0x4d) and compared to 4. If the result of the XOR is not 4, the "try again.." message is output. We want to avoid the jumps to address 0x77 in the bytecode bytes as that will print the above fail message.
+The first character of the password is XOR'd by 77 (0x4d) and compared to 4. If the result of the XOR is not 4, the "try again.." message is output. We want to avoid the jumps to address 0x77 in the bytecode bytes as that will print the above fail message. 
 
 ```
 0x0:	MOV r1,password[0]
@@ -56,6 +56,8 @@ The first character of the password is XOR'd by 77 (0x4d) and compared to 4. If 
 0xf:	JNZ 0x77
 ```
 
+Because of the properties of the XOR operation being commutative, associative, self-inverse, and 0 being the identity element, one can solve a binary XOR operation with one operand known and the other as a variable (unknown) equal to a known by XOR'ing both sides of the equality operator by the known. Applying that to the "equation" of 77 XOR 4 is 73 (0x49). The first character needs to equal 73 (0x49) or the letter 'I'.
+
 The second character is XOR'd by the result of the previous XOR (4). The result of that operation needs to be equal to 73 (0x49).
 
 ```
@@ -65,6 +67,8 @@ The second character is XOR'd by the result of the previous XOR (4). The result 
 0x1a:	CMP r2,r3
 0x1d:	JNZ 0x77
 ```
+
+Solving that constraints results in the second character being equal to 77 (0x4d).
 
 The third character needs to be equal to 95 (0x5f).
 
