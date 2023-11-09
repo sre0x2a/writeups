@@ -45,7 +45,7 @@ I have a few notes of the instructions listed in the table above. The `X` and `Y
 
 I wrote a simple disassembler [program](https://sre0x2a.github.io/writeups/assets/files/imcrackme/disasm.c) to show the resulting [code](https://sre0x2a.github.io/writeups/assets/files/imcrackme/listing.txt) to check for a correct password.
 
-The first character of the password is XOR'd by 77 (0x4d) and compared to 4. If the result of the XOR is not 4, the "try again.." message is output. We want to avoid the jumps to address 0x77 in the binary as that will print the above fail message.
+The first character of the password is XOR'd by 77 (0x4d) and compared to 4. If the result of the XOR is not 4, the "try again.." message is output. We want to avoid the jumps to address 0x77 in the bytecode bytes as that will print the above fail message.
 
 ```
 0x0:	MOV r1,password[0]
