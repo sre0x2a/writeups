@@ -142,7 +142,19 @@ That results in the fifth character equal to 79 (0x4f). Substituting that value 
 
 That results in the seventh character equal to 73 (0x49). Placing that result into equation (2) results in the sixth character equal to 79 (0x4f).
 
-Putting all the character values together results in the string "IM_GOOD". A final check is performed on the password length. The length of the string needs to be seven characters. The string "IM_GOOD" is seven characters which more proof of a correct password.
+Putting all the character values together results in the string "IM_GOOD".
+
+```
+0: 73 (0x49) -> 'I'
+1: 77 (0x4d) -> 'M'
+2: 95 (0x5f) -> '_'
+3: 71 (0x47) -> 'G'
+4: 79 (0x4f) -> 'O'
+5: 79 (0x4f) -> 'O'
+6: 68 (0x44) -> 'D'
+```
+
+A final check is performed on the password length. The length of the string needs to be seven characters. The string "IM_GOOD" is seven characters which is more proof of a correct password.
 
 ```
 0x77:	try again..
