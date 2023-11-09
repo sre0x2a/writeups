@@ -25,7 +25,7 @@ The function at 0x1400016a0 will create the last std::vector\<int\> instance. Th
 
 The main function is located at 0x1400020a0 and prompts the user for a password. The password string instance mentioned above is populated with the user input. A loop is entered that will call the function that is the instruction VM for the challenge until the size of the first vector is less than or equal to iteration variable. The iteration variable is incremented by 1 with each iteration.
 
-Jumping into the instruction VM function at 0x140001db0, we find a switch statement. The current loop iteration variable is effectively the instruction pointer. The 125 element vector will have the element at the current iteration value copied to a local variable. The local variable value will then be copied to another local variable. That second local variable value will be subtracted by 1. The resulting value will be the opcode for the instruction.
+Jumping into the instruction VM function at 0x140001db0, we find a switch statement. The current loop iteration variable is effectively the instruction pointer. The 125 element vector will have the element at the current iteration variable copied to a local variable. The local variable value will then be copied to another local variable. That second local variable value will be subtracted by 1. The resulting value will be the opcode for the instruction.
 
 The cases of the switch statement correspond to instructions/opcodes for the instruction set. The table that follows displays the full instruction set with the original value not subtracted by 1 and the number of bytes for the instruction.
 
