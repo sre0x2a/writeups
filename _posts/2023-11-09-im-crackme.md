@@ -13,9 +13,9 @@ Before the main method executes, a serious of functions are executed during the 
 
 ![initterm](https://sre0x2a.github.io/writeups/assets/images/imcrackme/initterm.png "initterm")
 
-![init functions](https://sre0x2a.github.io/writeups/assets/images/imcrackme/init_functions.png "init functions")
-
 The function at 0x140001000 initializes a new std::string instance that will be used to store the user input password.
+
+![init functions](https://sre0x2a.github.io/writeups/assets/images/imcrackme/init_functions.png "init functions")
 
 The function at 0x140001030 will initialize a new std::vector\<int\> instance. This particular instance will be populated with 125 signed integers (32 bit values) after instantiation and while still in the function. The 125 integers taken as single bytes will make up the instruction set for the instruction/bytecode VM.
 
