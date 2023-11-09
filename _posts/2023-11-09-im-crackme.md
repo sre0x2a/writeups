@@ -17,11 +17,11 @@ Before the main method executes, a serious of functions are executed during the 
 
 The function at 0x140001000 initializes a new std::string instance that will be used to store the user input password.
 
-The function at 0x140001030 will initialize a new std::vector<int> instance. This particular instance will be populated with 125 signed integers (32 bit values) after instantiation and while still in the function. The 125 integers taken as single bytes will make up the instruction set for the instruction/bytecode VM.
+The function at 0x140001030 will initialize a new std::vector\<int\> instance. This particular instance will be populated with 125 signed integers (32 bit values) after instantiation and while still in the function. The 125 integers taken as single bytes will make up the instruction set for the instruction/bytecode VM.
 
-The function at 0x1400015e0 will also create a new std::vector<int> instance and populate the instance with 8 signed integers. These values will be used in comparison operations to validate the correct user input password.
+The function at 0x1400015e0 will also create a new std::vector\<int\> instance and populate the instance with 8 signed integers. These values will be used in comparison operations to validate the correct user input password.
 
-The function at 0x1400016a0 will create the last std::vector<int> instance. The vector instance will be used as the registers to be used by the instruction set for the instruction VM.
+The function at 0x1400016a0 will create the last std::vector\<int\> instance. The vector instance will act as the registers used by the instruction set for the instruction VM.
 
 The main function is located at 0x1400020a0 and prompts the user for a password. The password string instance mentioned above is populated with the user input. A loop is entered that will call the function that is the instruction VM for the challenge until the size of the first vector is less than or equal to iteration variable. The iteration variable is incremented by 1 with each iteration.
 
