@@ -13,15 +13,15 @@ Before the main method executes, a serious of functions are executed during the 
 
 ![initterm](https://sre0x2a.github.io/writeups/assets/images/imcrackme/initterm.png "initterm")
 
-The function at 0x140001000 initializes a new std::string instance that will be used to store the user input password.
+The function at 0x140001000 initializes a new [std::string](https://cplusplus.com/reference/string/string/) instance that will be used to store the user input password.
 
 ![init functions](https://sre0x2a.github.io/writeups/assets/images/imcrackme/init_functions.png "init functions")
 
-The function at 0x140001030 will initialize a new std::vector\<int\> instance. This particular instance will be populated with 125 signed integers (32 bit values) after instantiation and while still in the function. The 125 integers taken as single bytes will make up the instruction set for the instruction/bytecode VM.
+The function at 0x140001030 will initialize a new [std::vector\<int\>](https://cplusplus.com/reference/vector/vector/) instance. This particular instance will be populated with 125 signed integers (32 bit values) after instantiation and while still in the function. The 125 integers taken as single bytes will make up the instruction set for the instruction/bytecode VM.
 
-The function at 0x1400015e0 will also create a new std::vector\<int\> instance and populate the instance with 8 signed integers. These values will be used in comparison operations to validate the correct user input password.
+The function at 0x1400015e0 will also create a new [std::vector\<int\>](https://cplusplus.com/reference/vector/vector/) instance and populate the instance with 8 signed integers. These values will be used in comparison operations to validate the correct user input password.
 
-The function at 0x1400016a0 will create the last std::vector\<int\> instance. The vector instance will act as the registers used by the instruction set for the instruction VM.
+The function at 0x1400016a0 will create the last [std::vector\<int\>](https://cplusplus.com/reference/vector/vector/) instance. The vector instance will act as the registers used by the instruction set for the instruction VM.
 
 The main function is located at 0x1400020a0 and prompts the user for a password. The password string instance mentioned above is populated with the user input. A loop is entered that will call the function that is the instruction VM for the challenge until the size of the first vector is less than or equal to iteration variable. The iteration variable is incremented by 1 with each iteration.
 
