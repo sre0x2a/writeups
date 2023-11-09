@@ -3,7 +3,7 @@ title: im_crackme
 date: 2023-11-09
 ---
 
-Below details the analysis to find the correct password for the bytecode VM binary, im_crackme, found on the crackmes.one website. The post is part of the "Blundering to Greatness" series that chronicles the journey of a software engineer and their attempts to become a software reverse engineer. The focus of the blog is on static binary analysis of CTFs, crackmes, and various other binary samples. Where appropriate other techniques will be used.
+Below details the analysis to find the correct password for the bytecode VM binary, im_crackme, found on the [crackmes.one](https://crackmes.one/crackme/653784b96451214b1db98670) website. The post is part of the "Blundering to Greatness" series that chronicles the journey of a software engineer and their attempts to become a software reverse engineer. The focus of the blog is on static binary analysis of CTFs, crackmes, and various other binary samples. Where appropriate other techniques will be used.
 
 # Analysis of im_crackme
 
@@ -15,7 +15,7 @@ Before the main method executes, a serious of functions are executed during the 
 
 ![init functions](https://sre0x2a.github.io/writeups/assets/images/imcrackme/init_functions.png "init functions")
 
-The function at 0x140001000 initials a new std::string instance that will be used to store the user input password.
+The function at 0x140001000 initializes a new std::string instance that will be used to store the user input password.
 
 The function at 0x140001030 will initialize a new std::vector<int> instance. This particular instance will be populated with 125 signed integers (32 bit values) after instantiation and while still in the function. The 125 integers taken as single bytes will make up the instruction set for the instruction/bytecode VM.
 
